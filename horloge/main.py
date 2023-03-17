@@ -26,13 +26,13 @@ def display_time(hour, format):
     hour_list = list(hour)
     paused = False
     while True:
-        if keyboard.is_pressed('space') and not paused:
+        if keyboard.is_pressed('space') and paused == False: # ou and not paused
             os.system("pause")
             paused = True
-        elif keyboard.is_pressed("space") and paused:
+        elif keyboard.is_pressed("space") and paused == True: # ou and paused
             paused = False
 
-        if not paused:
+        if paused == False: # if not paused
             hour_list[2] += 1
             if hour_list[2] == 60:
                 hour_list[2] = 0
